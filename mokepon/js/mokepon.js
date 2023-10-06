@@ -1,3 +1,6 @@
+let playerAttack
+let pcAttack
+
 function gameStart() {
     let btnPetPlayer = document.getElementById("btn-pet")
 
@@ -9,6 +12,13 @@ function gameStart() {
         };
     */
 
+    let   btnFire = document.getElementById("btn-fire")
+    btnFire.addEventListener("click",attackFire);
+    let  btnWater = document.getElementById("btn-water")
+    btnWater.addEventListener("click",attackWater);
+    let btnEarth = document.getElementById("btn-earth")
+    btnEarth.addEventListener("click",attackEarth);
+
 }
 
 
@@ -16,7 +26,7 @@ function selectPetPlayer() {
 
     let inputHipodoge = document.getElementById("Hipodoge")
     let inputCapipepo = document.getElementById("Capipepo")
-    let inputRatclue = document.getElementById("Ratclue")
+    let inputRatclue  = document.getElementById("Ratclue")
 
     let spanPetPlayer = document.getElementById('pet-player')
 
@@ -39,6 +49,8 @@ function selectPetPlayer() {
     selectPetPc()
 
 
+
+
 }
 
 function selectPetPc() {
@@ -57,6 +69,27 @@ function selectPetPc() {
     }
 }
 
+function attackFire(){
+    playerAttack = "fire";
+    randomAttackPc()
+}
+function attackEarth(){
+    playerAttack = "earth";
+    randomAttackPc()
+}
+function attackWater(){
+    playerAttack = "water";
+    randomAttackPc()
+}
+function randomAttackPc(){
+    let pcAttack = random(1,3);
+
+    if(randomAttackPc==1){
+        pcAttack="fire"
+    }else if (randomAttackPc==2){
+        pcAttack="earth"
+    }else if (randomAttackPc==3){}
+}
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
