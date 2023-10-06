@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon </title>
+</head>
+<body>
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            gap:1em;
+            
+        }
+
+        .mastery{
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            gap:1em;
+        }
+
+        button{
+            padding:1em;
+            background-color: lightblue;
+            color: white;
+            border-radius: 1em;
+            border: none;
+            font-size: 25px;
+            font-weight: bolder;
+            cursor:pointer;
+            transition-property: background-color;
+            transition-duration: 250ms;
+        }
+        button:hover{
+            background-color: lightslategray;
+        }
+    </style>
+    <main>
+        <header>
+            <h1>Mokepon</h1>
+        </header>
+        <body>
+            El juego
+
+            <section id="select-pet" class="select-pet">
+              
+            </section>
+            <section id="select-attack" class="select-attack">
+                <div class="description">
+                    <h3>Your pet has <span class="my-pets-lifes">X</span>lifes</h3>
+                    <p>Enemy pets have <span class="enemy-pets-lifes">X</span>lifes</p>
+                </div>
+                <div class="mastery">
+                    <button> Fire 🔥 </button>
+                    <button> Water 🌊</button>
+                    <button> Earth 🪴 </button>
+                </div>
+            </section>
+        </body>
+        <footer>
+            Project
+        </footer>
+    </main>
+</body>
+</html>
