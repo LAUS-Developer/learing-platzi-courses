@@ -28,8 +28,6 @@ function selectPetPlayer() {
 
     let spanPetPlayer = document.getElementById('pet-player')
 
-
-
     if (inputHipodoge.checked) {
         spanPetPlayer.innerHTML = "Hipodoge"
 
@@ -43,13 +41,10 @@ function selectPetPlayer() {
     } else {
         //alert("Escoge algo man")
     }
-
     selectPetPc()
 
-
-
-
 }
+
 function selectPetPc() {
     let randomPc = random(1, 3)
     let spanPetPc = document.getElementById("pet-pc")
@@ -87,7 +82,38 @@ function randomAttackPc() {
     } else {
         pcAttack = "water";
     }
+
+    combat()
 }
+function combat(){
+    if (pcAttack == playerAttack){
+        createMessage("Tie")
+    }else if (playerAttack == "fire" && pcAttack == "earth"){
+        createMessage("You Win!")
+        //triunfos = triunfos + 1
+    }else if (playerAttack == "water" && pcAttack == "fire"){
+        createMessage("You Win!")
+        //triunfos = triunfos + 1
+    }else if (playerAttack == "earth" && pcAttack == "water"){
+        createMessage ("You win!")
+        //triunfos = triunfos + 1
+    }else{
+        createMessage("Perdiste")
+        //partidas = perdidas + 1
+    }
+}
+
+
+function createMessage(combatResult){
+    let sectionParagraph = document.getElementById("combat-messages");
+
+    let paragraph = document.createElement("p");
+    paragraph.innerHTML ="Your pet attacked with "+playerAttack+". Enemy pet attacked with"+ pcAttack + " " + combatResult;
+
+    sectionParagraph.appendChild(paragraph);
+
+}
+
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
