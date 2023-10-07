@@ -1,5 +1,7 @@
-let playerAttack
-let pcAttack
+let playerAttack;
+let pcAttack;
+let playerLifes = 3
+let pcLifes = 3
 
 function gameStart() {
     let btnPetPlayer = document.getElementById("btn-pet")
@@ -19,7 +21,7 @@ function gameStart() {
     let btnEarth = document.getElementById("btn-earth")
     btnEarth.addEventListener("click", attackEarth);
 
-}
+};
 function selectPetPlayer() {
 
     let inputHipodoge = document.getElementById("Hipodoge")
@@ -30,8 +32,6 @@ function selectPetPlayer() {
 
     if (inputHipodoge.checked) {
         spanPetPlayer.innerHTML = "Hipodoge"
-
-        console.log(spanPetPlayer)
     }
     else if (inputCapipepo.checked) {
         spanPetPlayer.innerHTML = "Capipepo"
@@ -39,11 +39,11 @@ function selectPetPlayer() {
     else if (inputRatclue.checked) {
         spanPetPlayer.innerHTML = "Ratclue"
     } else {
-        //alert("Escoge algo man")
+        alert("Escoge algo man")
     }
     selectPetPc()
 
-}
+};
 
 function selectPetPc() {
     let randomPc = random(1, 3)
@@ -59,19 +59,19 @@ function selectPetPc() {
         //Raticlue
         spanPetPc.innerHTML = "Ratclue"
     }
-}
+};
 function attackFire() {
     playerAttack = "fire";
     randomAttackPc()
-}
+};
 function attackEarth() {
     playerAttack = "earth";
     randomAttackPc()
 }
 function attackWater() {
-    playerAttack = "water";
+    playerAttack = "water";+
     randomAttackPc()
-}
+};
 function randomAttackPc() {
     let randomAttack = random(1,3);
 
@@ -84,38 +84,71 @@ function randomAttackPc() {
     }
 
     combat()
-}
+   
+};
 function combat(){
+    let spanPlayerLifes = document.getElementById("playerLifes")
+    let spanPcLifes     = document.getElementById("pcLifes")
+
+
+
     if (pcAttack == playerAttack){
         createMessage("Tie")
     }else if (playerAttack == "fire" && pcAttack == "earth"){
         createMessage("You Win!")
         //triunfos = triunfos + 1
+
+        spanPcLifes.innerHTML = pcLifes
+        pcLifes--;
     }else if (playerAttack == "water" && pcAttack == "fire"){
         createMessage("You Win!")
         //triunfos = triunfos + 1
+         spanPcLifes.innerHTML = pcLifes
+         pcLifes--;
     }else if (playerAttack == "earth" && pcAttack == "water"){
         createMessage ("You win!")
         //triunfos = triunfos + 1
+         spanPcLifes.innerHTML = pcLifes
+         pcLifes--;
     }else{
-        createMessage("Perdiste")
+        createMessage("LOSER")
         //partidas = perdidas + 1
+
+        playerLifes--;
+        spanPlayerLifes.innerHTML=playerLifes;
+    }
+};
+
+function checklifes() {
+    if (pcLifes == 0) {
+        createEndMessage("Player Wins!")
+    } else if (playerLifes =     0) {
+        createEndMessage('PC Wins!')
     }
 }
-
 
 function createMessage(combatResult){
     let sectionParagraph = document.getElementById("combat-messages");
 
     let paragraph = document.createElement("p");
-    paragraph.innerHTML ="Your pet attacked with "+playerAttack+". Enemy pet attacked with"+ pcAttack + " " + combatResult;
+    paragraph.innerHTML ="Your pet attacked with "+playerAttack+". Enemy pet attacked with "+ pcAttack + " " + combatResult;
 
     sectionParagraph.appendChild(paragraph);
 
+    checklifes()
+};
+
+function createEndMessage(combatEndResult){
+    let sectionParagraph = document.getElementById("combat-messages");
+
+    let paragraph = document.createElement("p");
+    paragraph.innerHTML = combatEndResult;
+
+    sectionParagraph.appendChild(paragraph);
 }
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
-}
+};
 
 window.addEventListener("load", gameStart);
