@@ -1,0 +1,47 @@
+html {
+    background-color: lightslategrey;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+
+}
+#h1{
+    text-decoration: underline;
+}
+.h1{
+    color: salmon;
+}
+
+.mastery {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+}
+
+button {
+    padding: 1em;
+    background-color: lightblue;
+    color: white;
+    border-radius: 1em;
+    border: none;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 250ms;
+}
+
+button:hover {
+    background-color: darksalmon;
+}
