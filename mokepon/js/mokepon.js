@@ -4,9 +4,14 @@ let playerLifes = 3
 let pcLifes = 3
 
 function gameStart() {
+    let sectionSelectAttack = document.getElementById("select-attack");
+    sectionSelectAttack.style.display="none";
+    
     let btnPetPlayer = document.getElementById("btn-pet")
-
     btnPetPlayer.addEventListener("click", selectPetPlayer)
+
+    let sectionReset = document.getElementById ("restart");
+    sectionReset.style.display="none"
 
     /*
         function selectPetPlayer(){        
@@ -21,9 +26,20 @@ function gameStart() {
     let btnEarth = document.getElementById("btn-earth")
     btnEarth.addEventListener("click", attackEarth);
 
-};
-function selectPetPlayer() {
 
+};
+function selectPetPlayer() { 
+    
+    let sectionSelectPet = document.getElementById("select-pet")
+    sectionSelectPet.style.display="none";
+
+    let sectionSelectAttack = document.getElementById("select-attack")
+    sectionSelectAttack.style.display="block";
+
+
+
+    
+    
     let inputHipodoge = document.getElementById("Hipodoge")
     let inputCapipepo = document.getElementById("Capipepo")
     let inputRatclue = document.getElementById("Ratclue")
@@ -122,7 +138,7 @@ function combat(){
 function checklifes() {
     if (pcLifes == 0) {
         createEndMessage("Player Wins!")
-    } else if (playerLifes =     0) {
+    } else if (playerLifes == 0) {
         createEndMessage('PC Wins!')
     }
 }
@@ -145,6 +161,22 @@ function createEndMessage(combatEndResult){
     paragraph.innerHTML = combatEndResult;
 
     sectionParagraph.appendChild(paragraph);
+
+
+    let btnFire = document.getElementById("btn-fire")
+    btnFire.disabled=true
+    let btnWater = document.getElementById("btn-water")
+    btnWater.disabled=true
+    let btnEarth = document.getElementById("btn-earth")
+    btnEarth.disabled=true
+    
+    let sectionReset = document.getElementById ("restart");
+    sectionReset.style.display="block"
+
+}
+
+function btnReset () {
+    location.reload()
 }
 
 function random(min, max) {
