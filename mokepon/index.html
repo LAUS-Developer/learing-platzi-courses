@@ -21,25 +21,29 @@
         </header>
 
         <body>
-            The game
-
-
             <section id="select-pet" class="select-pet">
                 <h2> Select Pet </h2>
-                <hr>
-
 
                 <form id="pet-picker">
-                    <label for="Hipodoge">Hipodoge </label>
-                    <input type="radio" name="pet" id="Hipodoge" /></br>
+                    <div class="cards-container">
+                        <div id="Hipodoge" class="card">
+                            <label for="Hipodoge">Hipodoge </label>
+                            <input type="radio" name="pet" id="Hipodoge" />
+                        </div>
+    
+                        <div id="Capipepo" class="card">
+                            <label for="Capipepo">Capipepo </label>
+                            <input type="radio" name="pet" id="Capipepo" />
+                        </div>
+    
+                        <div id="Ratclue" class="card">
+                            <label for="Ratclue">Ratclue </label>
+                            <input type="radio" name="pet" id="Ratclue" />
+                        </div>
+                    </div>
 
-                    <label for="Capipepo">Capipepo </label>
-                    <input type="radio" name="pet" id="Capipepo" /></br>
-
-                    <label for="Ratclue">Ratclue </label>
-                    <input type="radio" name="pet" id="Ratclue" /></br>
-
-                    <label for="Langostelvis">Langostelvis</label>
+                    <!--
+                        <label for="Langostelvis">Langostelvis</label>
                     <input type="radio" name="pet" id="Langostelvis" /></br>
 
                     <label for="Tucapalma">Tucapalma </label>
@@ -47,15 +51,17 @@
 
                     <label for="Pydos">Pydos </label>
                     <input type="radio" name="pet" id="Pydos" /></br>
-                    </fo rm>
-
+                    -->
                     <button id="btn-pet" type="button">Select</button>
+                </form>
+
+                
             </section>
             <section id="select-attack" class="select-attack">
                 <div class="description">
                     <h3>Your pet <span id="pet-player">x</span> has <span id="playerLifes">3</span> lifes</h3>
                     <p>Enemy pet <span id="pet-pc">x</span> has <span id="pcLifes">3</span> lifes</p>
-                </div> 
+                </div>
                 <div class="mastery">
                     <button id="btn-fire" type="button"> Fire 🔥 </button>
                     <button id="btn-water" type="button"> Water 🌊</button>
@@ -66,15 +72,15 @@
                 <button id="btn-reset">Restart</button>
             </section>
             <section id="combat-messages" class="combat">
-                
+
             </section>
 
-           
+
 
 
         </body>
         <footer>
-            Project
+         
 
         </footer>
     </main>

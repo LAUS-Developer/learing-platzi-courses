@@ -26,6 +26,9 @@ function gameStart() {
     let btnEarth = document.getElementById("btn-earth")
     btnEarth.addEventListener("click", attackEarth);
 
+    let btnReset = document.getElementById("btn-reset")
+    btnReset = addEventListener("click",btnReset)
+
 
 };
 function selectPetPlayer() { 
