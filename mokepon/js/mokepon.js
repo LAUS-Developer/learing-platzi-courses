@@ -10,14 +10,10 @@ function gameStart() {
     let btnPetPlayer = document.getElementById("btn-pet")
     btnPetPlayer.addEventListener("click", selectPetPlayer)
 
-    let sectionReset = document.getElementById ("restart");
+   let sectionReset = document.getElementById ("restart");
     sectionReset.style.display="none"
 
-    /*
-        function selectPetPlayer(){        
-            alert("Pet Selected")
-        };
-    */
+  
 
     let btnFire = document.getElementById("btn-fire")
     btnFire.addEventListener("click", attackFire);
@@ -25,10 +21,6 @@ function gameStart() {
     btnWater.addEventListener("click", attackWater);
     let btnEarth = document.getElementById("btn-earth")
     btnEarth.addEventListener("click", attackEarth);
-
-    let btnReset = document.getElementById("btn-reset")
-    btnReset = addEventListener("click",btnReset)
-
 
 };
 function selectPetPlayer() { 
@@ -177,10 +169,10 @@ function createEndMessage(combatEndResult){
     sectionReset.style.display="block"
 
 }
-
-function btnReset () {
+function resetGame () {
     location.reload()
 }
+
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
