@@ -126,25 +126,27 @@ button:hover {
     margin:1em
 }
 
-#Hipodoge.card{
+#Hipodoge-card.card{
     background-image: url(../src/fire.jpg);
     background-position: center;
     background-size: cover;
 
 }
-#Capipepo.card{
+#Capipepo-card.card{
     background-image: url(../src/earth.jpg);
     background-position: center;
     background-size: cover;
     
 }
-#Ratclue.card{
+#Ratclue-card.card{
     background-image: url(../src/water.jpg);
     background-position: center;
     background-size: cover;    
 }
 
 #combat-messages.combat {
+    display: flex;
+    flex-direction: column;
     max-height: 130px;
     overflow-y: auto;
 }
