@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon 2</title>
+   
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+    <script src="./js/mokepon.js"></script>
+
+</head>
+
+<body>
+    <style>
+
+    </style>
+    <main>
+        <header>
+            <h1 id="h1" class="h1">Mokepon</h1>
+        </header>
+
+        <body>
+            <section id="select-pet" class="select-pet">
+                <h2> Select Pet </h2>
+
+                <form id="pet-picker">
+                    <div class="cards-container">
+                        <div id="Hipodoge-card" class="card">
+                            <label for="Hipodoge">Hipodoge </label>
+                            <input type="radio" name="pet" id="Hipodoge" />
+                        </div>
+    
+                        <div id="Capipepo-card" class="card">
+                            <label for="Capipepo">Capipepo </label>
+                            <input type="radio" name="pet" id="Capipepo" />
+                        </div>
+    
+                        <div id="Ratclue-card" class="card">
+                            <label for="Ratclue">Ratclue </label>
+                            <input type="radio" name="pet" id="Ratclue" />
+                        </div>
+                    </div>
+
+                    <!--
+                        <label for="Langostelvis">Langostelvis</label>
+                    <input type="radio" name="pet" id="Langostelvis" /></br>
+
+                    <label for="Tucapalma">Tucapalma </label>
+                    <input type="radio" name="pet" id="Tucapalma" /></br>
+
+                    <label for="Pydos">Pydos </label>
+                    <input type="radio" name="pet" id="Pydos" /></br>
+                    -->
+                    <button id="btn-pet" type="button">Select</button>
+                </form>
+
+                
+            </section>
+            <section id="select-attack" class="select-attack">
+                <div class="description">
+                    <h3>Your pet <span id="pet-player">x</span> has <span id="playerLifes">3</span> lifes</h3>
+                    <p>Enemy pet <span id="pet-pc">x</span> has <span id="pcLifes">3</span> lifes</p>
+                </div>
+                <div class="mastery">
+                    <button id="btn-fire" type="button"> Fire 🔥 </button>
+                    <button id="btn-water" type="button"> Water 🌊</button>
+                    <button id="btn-earth" type="button"> Earth 🪴 </button>
+                </div>
+            </section>
+            
+
+            <article id="combatEndResult">
+                <div id="endResultMessage">
+
+                </div>
+                <section id="restart">
+                    <button id="btn-reset" onClick="resetGame()">Restart</button>
+                </section>
+            </article>
+            <article id="messages">
+                <section id="combat-messages" class="combat"></section>
+                <section id="results">
+                    <div class="resultMessages">
+                        <p id="result"></p>
+               
+                    </div>
+                </section>
+                <div class="attackMessages">
+                    <section id="playerAttack" class="attacking">
+                        <h4>Player Attack</h4>
+                    </section>
+                    <section id="pcAttack" class="attacking">
+                        <h4>PC Attack</h4>
+                    </section>
+                </div>
+            </article>
+
+
+
+
+        </body>
+        <footer>
+         
+
+        </footer>
+    </main>
+</body>
+
+</html>
