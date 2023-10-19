@@ -139,35 +139,38 @@ function checklifes() {
 }
 
 function createMessage(combatResult){
-    let sectionParagraph = document.getElementById("combat-messages");
-    let sectionResult = document.getElementById("result");
-    let sectionPlayerAttack = document.getElementById("result");
-    let sectionPcAttack = document.getElementById("result");
 
-    let paragraph = document.createElement("p");
+    let sectionParagraph = document.getElementById("combat-messages");
+    let paragraph = document.createElement("p");    
     paragraph.innerHTML ="Your pet attacked with "+playerAttack+". Enemy pet attacked with "+ pcAttack + " " + combatResult;
     sectionParagraph.appendChild(paragraph);
 
-    let result = document.createElement("p");
-    result.innerHTML ="Your pet attacked with "+playerAttack+". Enemy pet attacked with "+ pcAttack + " " + combatResult;
-    sectionResult.appendChild(result);
 
-    let playerAttack = document.createElement("p");
-    playerAttack.innerHTML = playerAttack;
-    sectionPlayerAttack.appendChild(playerAttack);
 
-    let pcAttack = document.createElement("p");
-    pcAttack.innerHTML = pcAttack;
-    sectionPcAttack.appendChild(pcAttack);
+    let sectionResult = document.getElementById('result')
+    let sectionPlayerAttack = document.getElementById ('playerAttack')
+    let sectionPcAttack = document.getElementById ("pcAttack")
+
+    let newPlayerAttack = document.createElement('p')
+    let newPcAttack = document.createElement('p')
+
+    sectionResult.innerHTML = combatResult
+    newPlayerAttack.innerHTML = playerAttack
+    newPcAttack.innerHTML = pcAttack
+
+    sectionPlayerAttack.appendChild(newPlayerAttack)
+    sectionPcAttack.appendChild(newPcAttack)
+
 
     checklifes()
 };
 
 
 function createEndMessage(combatEndResult){
-    let sectionParagraph = document.getElementById("combat-messages");
+    let sectionParagraph = document.getElementById("endResultMessage");
 
     let paragraph = document.createElement("p");
+    paragraph.setAttribute("id","combatEndResult")
     paragraph.innerHTML = combatEndResult;
 
     sectionParagraph.appendChild(paragraph);

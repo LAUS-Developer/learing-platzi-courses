@@ -142,6 +142,7 @@ function createMessage(combatResult){
     let sectionParagraph = document.getElementById("combat-messages");
 
     let paragraph = document.createElement("p");
+    
     paragraph.innerHTML ="Your pet attacked with "+playerAttack+". Enemy pet attacked with "+ pcAttack + " " + combatResult;
 
     sectionParagraph.appendChild(paragraph);

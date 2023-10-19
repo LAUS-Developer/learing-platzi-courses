@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
+h1,h2,h3,h4,h5,h6,p{
+    margin:0;
+}
+
 html {
     background-color: lightslategrey;
 }
@@ -144,6 +148,33 @@ button:hover {
     background-size: cover;    
 }
 
+#messages{
+    display:flex;
+    flex-direction: column;
+    gap: 1em;
+}
+#results{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.resultMessages{
+    background-color: salmon;
+    padding: 1em;
+    border-radius: 1em;
+    font-weight: bolder;
+}
+.attackMessages{
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    gap: 1em;
+}
+
+#attackMessages.attacking{
+    display: grid;
+    
+}
 #combat-messages.combat {
     display: flex;
     flex-direction: column;

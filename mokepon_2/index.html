@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mokepon </title>
+    <title>Mokepon 2</title>
    
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
@@ -69,16 +69,33 @@
                     <button id="btn-earth" type="button"> Earth 🪴 </button>
                 </div>
             </section>
-            <section id="restart">
-                <button id="btn-reset" onClick="resetGame()">Restart</button>
-            </section>
-            <section id="combat-messages" class="combat">
+            
 
-            </section>
+            <article id="combatEndResult">
+                <div id="endResultMessage">
 
-            <div id="result"></div>
-            <div id="playerAttack"></div>
-            <div id="pcAttack"></div>
+                </div>
+                <section id="restart">
+                    <button id="btn-reset" onClick="resetGame()">Restart</button>
+                </section>
+            </article>
+            <article id="messages">
+                <section id="combat-messages" class="combat"></section>
+                <section id="results">
+                    <div class="resultMessages">
+                        <p id="result"></p>
+               
+                    </div>
+                </section>
+                <div class="attackMessages">
+                    <section id="playerAttack" class="attacking">
+                        <h4>Player Attack</h4>
+                    </section>
+                    <section id="pcAttack" class="attacking">
+                        <h4>PC Attack</h4>
+                    </section>
+                </div>
+            </article>
 
 
 
